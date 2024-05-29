@@ -105,16 +105,6 @@ Window {
             }
         }
 
-
-        // Rectangle {
-        //     height: 50
-        //     width: 50
-        //     color: "white"
-        //     anchors {
-        //         right: parent.right
-        //     }
-        // }
-
         Image {
             id: taskIcon
             height: 40
