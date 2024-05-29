@@ -20,6 +20,9 @@ qt_add_qml_module(apppomodoroTimer
         SOURCES appcore.h appcore.cpp
         QML_FILES CTabButton.qml
         QML_FILES CircularSlider.qml
+        QML_FILES TimerView.qml
+        QML_FILES TasksView.qml
+        QML_FILES SettingsView.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

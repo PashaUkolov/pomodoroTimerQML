@@ -4,6 +4,7 @@ import QtQuick.Controls
 TabButton {
     id: control
     padding: 0
+    property color tabButtonColor: "#b72424"
 
     contentItem: Text {
         text: control.text
@@ -18,15 +19,11 @@ TabButton {
     background: Rectangle {
         implicitWidth: 80
         implicitHeight: 40
-        color: control.checked ? "#b72424" : "transparent"
+        color: control.checked ? tabButtonColor : "transparent"
         radius: 5
+        MouseArea {
+            anchors.fill: parent
+            cursorShape: Qt.PointingHandCursor
+        }
     }
-
-    // Rectangle {
-    //     width: parent.width
-    //     height: 3
-    //     anchors.bottom: parent.bottom
-    //     visible: control.checked
-    //     color: "beige"
-    // }
 }
