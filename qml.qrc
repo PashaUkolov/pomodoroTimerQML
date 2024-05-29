@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/settingsIcon.png</file>
+        <file>assets/tasksIcon.png</file>
+        <file>ui/SettingsView.qml</file>
+        <file>ui/TasksView.qml</file>
+        <file>ui/TimerView.qml</file>
+        <file>ui/CircularSlider.qml</file>
+        <file>ui/CTabButton.qml</file>
+        <file>Main.qml</file>
+    </qresource>
+</RCC>

@@ -4,6 +4,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
 import QtQuick.Shapes
+import "ui"
 //import QtMultimedia
 
 Window {
@@ -21,17 +22,14 @@ Window {
         property color currentColor: "red"
 
         TimerView {
-            anchors.fill: parent
             mainColor: "#F04042"
             mainColorAccent: "#B72424"
         }
         TimerView {
-            anchors.fill: parent
             mainColor: "#4C9196"
             mainColorAccent: "#386A6E"
         }
         TimerView {
-            anchors.fill: parent
             mainColor: "#4D7FA2"
             mainColorAccent: "#375A73"
         }
@@ -64,6 +62,82 @@ Window {
         CTabButton {
             text: qsTr("Long Break")
             tabButtonColor: bar.currentIndex === 2 ? "#375A73" : "transparent"
+        }
+    }
+
+    Rectangle {
+        width: parent.width ; height: 65
+        anchors {
+            top: bar.bottom
+            left: parent.left
+            right: parent.right
+            topMargin: 20
+            leftMargin: 20
+            rightMargin: 20
+        }
+
+        color: "transparent"
+        border.color: "white"
+        border.width: 1
+        radius: 17
+        Text {
+            id: header
+            text: "Current task"
+            font.pointSize: 10
+            color: "white"
+            anchors {
+                top: parent.top
+                left: parent.left
+                topMargin: 8
+                leftMargin: 15
+            }
+        }
+
+        Text {
+            id: description
+            text: "Vacuum clean the desert"
+            font.pointSize: 16
+            color: "white"
+            anchors {
+                top: header.bottom
+                left: parent.left
+                leftMargin: 15
+            }
+        }
+
+
+        // Rectangle {
+        //     height: 50
+        //     width: 50
+        //     color: "white"
+        //     anchors {
+        //         right: parent.right
+        //     }
+        // }
+
+        Image {
+            id: taskIcon
+            height: 40
+            width: 40
+            fillMode: Image.PreserveAspectFit
+            source: "qrc:/assets/tasksIcon.png"
+            anchors {
+                right: parent.right
+                verticalCenter: parent.verticalCenter
+                rightMargin: 10
+            }
+        }
+
+    }
+
+    TasksView {
+        width: parent.width
+        height: parent.height / 12
+        anchors {
+            top: bar.bottom
+            left: parent.left
+            //topMargin: 20
+            //leftMargin: 20
         }
     }
 }

@@ -4,6 +4,8 @@ project(pomodoroTimer VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_AUTORCC ON)
+
 find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup()
@@ -18,11 +20,12 @@ qt_add_qml_module(apppomodoroTimer
     QML_FILES
         Main.qml
         SOURCES appcore.h appcore.cpp
-        QML_FILES CTabButton.qml
-        QML_FILES CircularSlider.qml
-        QML_FILES TimerView.qml
-        QML_FILES TasksView.qml
-        QML_FILES SettingsView.qml
+        QML_FILES ui/CTabButton.qml
+        QML_FILES ui/CircularSlider.qml
+        QML_FILES ui/TimerView.qml
+        QML_FILES ui/TasksView.qml
+        QML_FILES ui/SettingsView.qml
+        RESOURCES qml.qrc
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
